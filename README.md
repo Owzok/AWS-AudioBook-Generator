@@ -1,6 +1,7 @@
 # AWS-AudioBook-Generator
 
 ## Solution Architecture
+![solarch](SolutionArch.png)
 
 ## AWS Functions
 
