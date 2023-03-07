@@ -1,0 +1,98 @@
+IAM - LabRole
+ARN: arn:aws:iam::992047015027:role/LabRole
+
+SNS - RecibirTextract
+Politica de Filtro de suscripciones
+{
+  "tenant_id":[
+    "es"
+  ]
+}
+
+{
+  "Version": "2008-10-17",
+  "Id": "__default_policy_ID",
+  "Statement": [
+    {
+      "Sid": "__default_statement_ID",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": [
+        "SNS:GetTopicAttributes",
+        "SNS:SetTopicAttributes",
+        "SNS:AddPermission",
+        "SNS:RemovePermission",
+        "SNS:DeleteTopic",
+        "SNS:Subscribe",
+        "SNS:ListSubscriptionsByTopic",
+        "SNS:Publish"
+      ],
+      "Resource": "arn:aws:sns:us-east-1:992047015027:RecibirTextract",
+      "Condition": {
+        "StringEquals": {
+          "AWS:SourceOwner": "992047015027"
+        }
+      }
+    }
+  ]
+}
+
+SNS - RecibirTextractEx
+{
+  "Version": "2008-10-17",
+  "Id": "__default_policy_ID",
+  "Statement": [
+    {
+      "Sid": "__default_statement_ID",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "*"
+      },
+      "Action": [
+        "SNS:GetTopicAttributes",
+        "SNS:SetTopicAttributes",
+        "SNS:AddPermission",
+        "SNS:RemovePermission",
+        "SNS:DeleteTopic",
+        "SNS:Subscribe",
+        "SNS:ListSubscriptionsByTopic",
+        "SNS:Publish"
+      ],
+      "Resource": "arn:aws:sns:us-east-1:992047015027:RecibirTextractEx",
+      "Condition": {
+        "StringEquals": {
+          "AWS:SourceOwner": "992047015027"
+        }
+      }
+    }
+  ]
+}
+
+LAMBDA - ExtranToDynamo
+No hay instrucciones de politica
+
+LAMBDA  - TxtToDynamo
+No hay instrucciones de politica
+
+LAMBDA - TextractPNG
+Detalles de la instrucción de política
+
+Statement ID
+992047015027_event_permissions_from_archivosproyectofinalcloud_for_TextractPNG
+Principal
+s3.amazonaws.com
+Effect
+Allow
+Action
+lambda:InvokeFunction
+Conditions
+{
+ "StringEquals": {
+  "AWS:SourceAccount": "992047015027"
+ },
+ "ArnLike": {
+  "AWS:SourceArn": "arn:aws:s3:::archivosproyectofinalcloud"
+ }
+}
