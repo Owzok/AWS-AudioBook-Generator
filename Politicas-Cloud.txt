@@ -1,5 +1,5 @@
 IAM - LabRole
-ARN: arn:aws:iam::992047015027:role/LabRole
+ARN: arn:aws:iam::**********:role/LabRole
 
 SNS - RecibirTextract
 Politica de Filtro de suscripciones
@@ -29,10 +29,10 @@ Politica de Filtro de suscripciones
         "SNS:ListSubscriptionsByTopic",
         "SNS:Publish"
       ],
-      "Resource": "arn:aws:sns:us-east-1:992047015027:RecibirTextract",
+      "Resource": "arn:aws:sns:us-east-1:**********:RecibirTextract",
       "Condition": {
         "StringEquals": {
-          "AWS:SourceOwner": "992047015027"
+          "AWS:SourceOwner": "**********"
         }
       }
     }
@@ -60,10 +60,10 @@ SNS - RecibirTextractEx
         "SNS:ListSubscriptionsByTopic",
         "SNS:Publish"
       ],
-      "Resource": "arn:aws:sns:us-east-1:992047015027:RecibirTextractEx",
+      "Resource": "arn:aws:sns:us-east-1:************:RecibirTextractEx",
       "Condition": {
         "StringEquals": {
-          "AWS:SourceOwner": "992047015027"
+          "AWS:SourceOwner": "*************"
         }
       }
     }
@@ -80,7 +80,7 @@ LAMBDA - TextractPNG
 Detalles de la instrucción de política
 
 Statement ID
-992047015027_event_permissions_from_archivosproyectofinalcloud_for_TextractPNG
+***********_event_permissions_from_archivosproyectofinalcloud_for_TextractPNG
 Principal
 s3.amazonaws.com
 Effect
@@ -90,7 +90,7 @@ lambda:InvokeFunction
 Conditions
 {
  "StringEquals": {
-  "AWS:SourceAccount": "992047015027"
+  "AWS:SourceAccount": "**************"
  },
  "ArnLike": {
   "AWS:SourceArn": "arn:aws:s3:::archivosproyectofinalcloud"
